@@ -81,4 +81,48 @@ const noisyBoy = new makeObject("Jony","pk",12000)
 const silentBoy = new makeObject("Imam","Hassan",15000)
 const friendlyBoy = new makeObject("Naimul","Habib",30000)
 console.log(noisyBoy,silentBoy,friendlyBoy)
+
+const myObject = {
+    name: "kuddus Ali",
+    Department:"Management",
+    getFullName:function(){
+        console.log("presenting this object: ",this)
+        return "Mr. " + this.name;
+    }
+}
+
+const anotherObject = {
+    name: "Biddut Ali",
+    Department:"Marketing",
+    University:"university of Dhaka"
+    
+
+}
+const newObject = {
+    name: "Rock Star",
+    University:"university of Dhaka",
+    Department: "Marketing"
+    
+
+}
+anotherObject.getFullName = myObject.getFullName;
+console.log("this name is from anotherObject : ",anotherObject.getFullName())
+newObject.getFullName = myObject.getFullName;
+console.log("this is from newObject: ", newObject.getFullName())
+
+console.log(myObject.getFullName()) //here myObject is context
+
+
+
+
+
+function add(num1,num2){
+    
+    return num1 + num2;
+}
+add(12,15)
+anotherObject.sum = add;
+anotherObject.sum()
+
+
     
